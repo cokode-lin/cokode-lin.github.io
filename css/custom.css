@@ -482,7 +482,7 @@ h6::before {
 
 /* 侧边卡片栏宽度 */
 .aside-content {
-    max-width: 400px;
+    max-width: 320px;
     min-width: 300px;
 }
 
@@ -558,7 +558,7 @@ h6::before {
 
 
 /* 个人信息卡片背景图 */
-[data-theme="light"] #aside-content > .card-widget.card-info {
+/* [data-theme="light"] #aside-content > .card-widget.card-info {
     background-image: url(https://cokode.ink/image/favicon-bg.webp);
     background-repeat: no-repeat;
     background-attachment: inherit;
@@ -569,7 +569,7 @@ h6::before {
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-size: 100%;
-}
+} */
 
 /* 头像呼吸灯 */
 [data-theme="light"] .avatar-img {
