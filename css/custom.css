@@ -368,3 +368,205 @@ svg.social_icon {
     fill: currentColor;
     overflow: hidden;
 }
+
+/*哔哩哔哩视频适配*/
+.aspect-ratio {
+    position: relative;
+    width: 90%;
+    height: auto;
+    padding-bottom: 75%;
+    margin: 3% auto;
+    text-align: center;
+}
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 86%;
+    left: 0;
+    top: 0;
+}
+
+/* 文章页H1-H6图标样式效果 */
+/* 控制风车转动速度 4s那里可以自己调节快慢 */
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    -webkit-animation: ccc 4s linear infinite;
+    animation: ccc 4s linear infinite;
+}
+/* 控制风车转动方向 -1turn 为逆时针转动，1turn 为顺时针转动，相同数字部分记得统一修改 */
+@-webkit-keyframes ccc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(-1turn);
+        transform: rotate(-1turn);
+    }
+}
+@keyframes ccc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(-1turn);
+        transform: rotate(-1turn);
+    }
+}
+/* 设置风车颜色 */
+#content-inner.layout h1::before {
+    color: #fb7299;
+    margin-left: -1.55rem;
+    font-size: 2.4rem;
+    margin-top: -0.7rem;
+}
+#content-inner.layout h2::before {
+    color: #fb7061;
+    margin-left: -1.35rem;
+    font-size: 2.0rem;
+    margin-top: -0.6rem;
+}
+#content-inner.layout h3::before {
+    color: #ffbf00;
+    margin-left: -1.22rem;
+    font-size: 1.8rem;
+    margin-top: -0.5rem;
+}
+#content-inner.layout h4::before {
+    color: #57c850;
+    margin-left: -1.05rem;
+    font-size: 1.6rem;
+    margin-top: -0.4rem;
+}
+#content-inner.layout h5::before {
+    color: #5ec1e0;
+    margin-left: -0.9rem;
+    font-size: 1.4rem;
+    margin-top: -0.3rem;
+}
+#content-inner.layout h6::before {
+    color: #ff99ff;
+    margin-left: -0.9rem;
+    font-size: 1.2rem;
+    margin-top: -0.2rem;
+}
+/* s设置风车hover动效 6s那里可以自己调节快慢*/
+#content-inner.layout h1:hover,
+#content-inner.layout h2:hover,
+#content-inner.layout h3:hover,
+#content-inner.layout h4:hover,
+#content-inner.layout h5:hover,
+#content-inner.layout h6:hover {
+    color: var(--theme-color);
+}
+#content-inner.layout h1:hover::before,
+#content-inner.layout h2:hover::before,
+#content-inner.layout h3:hover::before,
+#content-inner.layout h4:hover::before,
+#content-inner.layout h5:hover::before,
+#content-inner.layout h6:hover::before {
+    color: var(--theme-color);
+    -webkit-animation: ccc 6s linear infinite;
+    animation: ccc 6s linear infinite;
+}
+
+/* 全局宽度 */
+.layout {
+    max-width: 1728px;
+}
+
+/* 侧边卡片栏宽度 */
+.aside-content {
+    max-width: 400px;
+    min-width: 300px;
+}
+
+/* 平板尺寸自适应(不启用侧边栏宽度限制) */
+@media screen and (max-width: 900px) {
+    .aside-content {
+    max-width: none !important;
+    padding: 0 5px 0 5px;
+    }
+}
+
+/* 除了首页以外其他页面隐藏卡片，并采用宽屏显示 */
+#archive,
+#page,
+#category,
+#tag {
+    width: 100%;
+}
+.page:not(.page.home) .aside-content {
+    display: none;
+}
+
+/* 头像状态 */
+.card-info-avatar .author-status-box {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% - 28px);
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d0d7de;
+    border-radius: 2em;
+    background-color: #f8f8f8f8;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .card-info-avatar .author-status-box {
+    background-color: #222222f2;
+    border: 1px solid #5c6060;
+}
+
+.card-info-avatar .author-status-box .author-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 5px;
+}
+
+.card-info-avatar .author-status-box:hover {
+    width: 105px;
+}
+
+.card-info-avatar .author-status-box:hover .author-status span {
+    width: 105px;
+    margin-left: 4px;
+}
+
+.card-info-avatar .author-status-box .author-status span {
+    width: 0;
+    font-size: 12px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: 0.4s;
+}
+
+.card-widget .card-info-avatar {
+    display: inline-block;
+    position: relative;
+}
+
+
+/* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+    background-image: url(https://cokode.ink/image/favicon-bg.webp);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+    background-image: url(https://cokode.ink/image/favicon-bg.webp);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+}
