@@ -622,3 +622,7 @@ h6::before {
   border-radius: 4px;
 }
 
+/* 赞助按钮 */
+#post > .post-reward > .reward-button {
+  border-radius: 8px;
+}
